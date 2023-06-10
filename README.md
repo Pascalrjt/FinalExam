@@ -1,6 +1,6 @@
 # WebProgFinal
 
-Web programming midterms project task made by
+Web programming final project task made by
 
 | NAME                      | NRP       |
 |---------------------------|-----------|
