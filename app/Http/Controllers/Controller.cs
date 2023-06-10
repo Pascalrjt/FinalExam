@@ -1,12 +1,9 @@
-<?php
+using Microsoft.AspNetCore.Mvc;
 
-namespace App\Http\Controllers;
-
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Illuminate\Foundation\Validation\ValidatesRequests;
-use Illuminate\Routing\Controller as BaseController;
-
-class Controller extends BaseController
+namespace YourAppName.Controllers
 {
-    use AuthorizesRequests, ValidatesRequests;
+    public class BaseController : Controller
+    {
+        // Add any common functionality or custom methods here that you want to be available in all controllers
+    }
 }
