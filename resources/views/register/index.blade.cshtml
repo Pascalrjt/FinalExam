@@ -1,0 +1,60 @@
+@{
+    Layout = "master";
+}
+
+<main class="form-registration w-100 m-auto">
+    <form method="post" action="/register">
+        @csrf
+        <center>
+            <img class="mb-4" src="/img/pethub-logo-dark.png" alt="" width="100" height="100">
+        </center>
+        <h1 class="h3 mb-3 fw-normal">Registration Form</h1>
+
+        <div class="form-floating">
+            <input type="text" name="name" class="form-control @if(ModelState["name"] != null) { <text>is-invalid</text> } @endif" id="name" placeholder="Saha Manh?" required value="@Request.Form["name"]">
+            <label for="name">Name</label>
+            @if(ModelState["name"] != null)
+            {
+                <div class="invalid-feedback">
+                    @Html.Raw(ModelState["name"].Errors[0].ErrorMessage)
+                </div>
+            }
+        </div>
+
+        <div class="form-floating">
+            <input type="text" name="username" class="form-control @if(ModelState["username"] != null) { <text>is-invalid</text> } @endif" id="username" placeholder="Username" required value="@Request.Form["username"]">
+            <label for="username">Username</label>
+            @if(ModelState["username"] != null)
+            {
+                <div class="invalid-feedback">
+                    @Html.Raw(ModelState["username"].Errors[0].ErrorMessage)
+                </div>
+            }
+        </div>
+
+        <div class="form-floating">
+            <input type="email" name="email" class="form-control @if(ModelState["email"] != null) { <text>is-invalid</text> } @endif" id="email" placeholder="name@example.com" required value="@Request.Form["email"]">
+            <label for="email">Email address</label>
+            @if(ModelState["email"] != null)
+            {
+                <div class="invalid-feedback">
+                    @Html.Raw(ModelState["email"].Errors[0].ErrorMessage)
+                </div>
+            }
+        </div>
+
+        <div class="form-floating">
+            <input type="password" name="password" class="form-control @if(ModelState["password"] != null) { <text>is-invalid</text> } @endif" id="password" placeholder="Password" required>
+            <label for="password">Password</label>
+            @if(ModelState["password"] != null)
+            {
+                <div class="invalid-feedback">
+                    @Html.Raw(ModelState["password"].Errors[0].ErrorMessage)
+                </div>
+            }
+        </div>
+
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+    </form>
+    <small><a href="/login">Already have an account? Login</a></small>
+</main>
