@@ -1,4 +1,4 @@
-# WebProgMidterms
+# WebProgFinal
 
 Web programming midterms project task made by
 
